@@ -1,0 +1,30 @@
+﻿COMPONENTS
+
+- Components handle specialized tasks related to their type.
+- Components have specialized data related to their type.
+- By combining components together into groups, "entities" can be represented with different properties
+- Components know who their parent Entity is, therefore they can obtain related component references.
+
+ENTITIES
+
+- Entities are collections of components.
+- Entities do not know what their constituent components are and serve only as a means to determine relation between
+sets of components
+- If there are multiple copies of a particular entity present at one time, some of their components may refer to 
+"duplicate" data - in the case of meshes for example. In this case, the component manager will need to be intelligent
+about storing internal data that is common vs that is unique.
+
+SYSTEMS
+
+- Systems are in charge of a particular type of Component.
+- Systems perform operations on the Components they handle. 
+
+
+- Anything that is rendered on the screen is taken to be a part of a "Scene"
+
+SCENES
+
+- Can probably be represented using Entities, though maybe they should be their own type?
+- Contain a list of all components required for the scene, but is not a static data structure - other
+components/entities can be created and added to the scene.
+- Contain a list of how the components are grouped together within entities. 
